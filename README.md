@@ -2,7 +2,7 @@
 
 ## 1. 项目简介
 
-本项目是一个用rust设计的R-I-J型指令的CPU，支持的指令集如下：
+本项目是一个用rust设计的R-I-J型指令的MIPS的CPU，支持的指令集如下：
 
 ### 1.1 R型指令
 
@@ -53,6 +53,8 @@
 │   │   ├── cpu.rs
 │   │   ├── instruction.rs
 │   │   ├── memory.rs
+│   │   ├── alu.rs
+│   │   ├── add.rs
 │   │   ├── register.rs
 │   │   └── mod.rs
 │   ├── main.rs
