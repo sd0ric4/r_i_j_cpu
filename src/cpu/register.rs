@@ -4,6 +4,7 @@ pub struct Register {
     pub reg: Vec<u32>,
     pub pc: u32,
     pub ra: u32,
+    pub mem: Memory,
 }
 
 impl Register {
@@ -12,6 +13,7 @@ impl Register {
             reg: vec![0; 32],
             pc: 0,
             ra: 0,
+            mem: Memory::new(),
         }
     }
 
@@ -57,7 +59,7 @@ impl Register {
     }
 
     pub fn sra(&mut self, rd: u8, rt: u8, sa: u8) {
-        self.reg[rd as usize] = (self.reg[rt as usize] as u32) >> sa;
+        self.reg[rd as usize] = (self.reg[rt as usize] as i32) >> sa;
     }
 
     pub fn jr(&mut self, rs: u8) -> u32 {
